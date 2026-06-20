@@ -1,0 +1,14 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# 固件 WiFi 密钥，不入库
+firmware/src/secrets.h
+firmware/.pio/
