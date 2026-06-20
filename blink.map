@@ -1,0 +1,161 @@
+
+Discarded input sections
+
+ .group         0x00000000        0xc /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+ .group         0x00000000        0xc /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+ .text          0x00000000        0x0 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+ .data          0x00000000        0x0 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+ .bss           0x00000000        0x0 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+ .group         0x00000000        0xc /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
+ .group         0x00000000        0xc /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
+ .text          0x00000000        0x0 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
+ .data          0x00000000        0x0 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
+ .bss           0x00000000        0x0 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
+ .debug_macro   0x00000000      0xaba /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
+ .debug_macro   0x00000000      0x34e /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x08000000         0x00010000         xr
+RAM              0x20000000         0x00005000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+LOAD /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
+                0x20005000                        _estack = (ORIGIN (RAM) + LENGTH (RAM))
+
+.isr_vector     0x08000000       0x40
+                0x08000000                        . = ALIGN (0x4)
+ *(.isr_vector)
+ .isr_vector    0x08000000       0x40 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
+                0x08000000                g_pfnVectors
+                0x08000040                        . = ALIGN (0x4)
+
+.text           0x08000040      0x1c8
+                0x08000040                        . = ALIGN (0x4)
+ *(.text*)
+ .text.pwm_cycle
+                0x08000040       0x7c /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+ .text.startup.main
+                0x080000bc       0xa8 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+                0x080000bc                main
+ .text.Default_Handler
+                0x08000164        0x4 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
+                0x08000164                BusFault_Handler
+                0x08000164                HardFault_Handler
+                0x08000164                SysTick_Handler
+                0x08000164                PendSV_Handler
+                0x08000164                NMI_Handler
+                0x08000164                UsageFault_Handler
+                0x08000164                Default_Handler
+                0x08000164                MemManage_Handler
+                0x08000164                SVC_Handler
+                0x08000164                DebugMon_Handler
+ .text.Reset_Handler
+                0x08000168       0x60 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
+                0x08000168                Reset_Handler
+ *(.rodata*)
+ .rodata.gamma_lut
+                0x080001c8       0x40 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+                0x08000208                        . = ALIGN (0x4)
+                0x08000208                        _sidata = LOADADDR (.data)
+
+.glue_7         0x08000208        0x0
+ .glue_7        0x08000208        0x0 linker stubs
+
+.glue_7t        0x08000208        0x0
+ .glue_7t       0x08000208        0x0 linker stubs
+
+.vfp11_veneer   0x08000208        0x0
+ .vfp11_veneer  0x08000208        0x0 linker stubs
+
+.v4_bx          0x08000208        0x0
+ .v4_bx         0x08000208        0x0 linker stubs
+
+.iplt           0x08000208        0x0
+ .iplt          0x08000208        0x0 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+
+.rel.dyn        0x08000208        0x0
+ .rel.iplt      0x08000208        0x0 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+
+.data           0x20000000        0x0 load address 0x08000208
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sdata = .
+ *(.data*)
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _edata = .
+
+.igot.plt       0x20000000        0x0 load address 0x08000208
+ .igot.plt      0x20000000        0x0 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+
+.bss            0x20000000        0x0 load address 0x08000208
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sbss = .
+ *(.bss*)
+ *(COMMON)
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _ebss = .
+OUTPUT(blink.elf elf32-littlearm)
+LOAD linker stubs
+
+.debug_info     0x00000000      0x42c
+ .debug_info    0x00000000      0x2da /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+ .debug_info    0x000002da      0x152 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
+
+.debug_abbrev   0x00000000      0x2af
+ .debug_abbrev  0x00000000      0x1ba /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+ .debug_abbrev  0x000001ba       0xf5 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
+
+.debug_loclists
+                0x00000000      0x13c
+ .debug_loclists
+                0x00000000       0xf6 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+ .debug_loclists
+                0x000000f6       0x46 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
+
+.debug_aranges  0x00000000       0x50
+ .debug_aranges
+                0x00000000       0x28 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+ .debug_aranges
+                0x00000028       0x28 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
+
+.debug_rnglists
+                0x00000000       0x66
+ .debug_rnglists
+                0x00000000       0x4d /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+ .debug_rnglists
+                0x0000004d       0x19 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
+
+.debug_macro    0x00000000      0xe9e
+ .debug_macro   0x00000000       0x72 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+ .debug_macro   0x00000072      0xaba /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+ .debug_macro   0x00000b2c      0x34e /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+ .debug_macro   0x00000e7a       0x24 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
+
+.debug_line     0x00000000      0x3ab
+ .debug_line    0x00000000      0x286 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+ .debug_line    0x00000286      0x125 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
+
+.debug_str      0x00000000     0x3990
+ .debug_str     0x00000000     0x3990 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+                               0x3a7d (size before relaxing)
+ .debug_str     0x00003990     0x3906 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
+
+.comment        0x00000000       0x45
+ .comment       0x00000000       0x45 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+                                 0x46 (size before relaxing)
+ .comment       0x00000045       0x46 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
+
+.ARM.attributes
+                0x00000000       0x2d
+ .ARM.attributes
+                0x00000000       0x2d /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+ .ARM.attributes
+                0x0000002d       0x2d /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
+
+.debug_frame    0x00000000       0x88
+ .debug_frame   0x00000000       0x50 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//cckAR83s.o
+ .debug_frame   0x00000050       0x38 /var/folders/lf/8gtp0mt912g8g_61129k0wz40000gn/T//ccgMLksm.o
